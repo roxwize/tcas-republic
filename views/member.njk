@@ -1,0 +1,58 @@
+---
+layout: main
+pagination:
+  data: members
+  size: 1
+  alias: member
+permalink: "members/{{ member.uname.replaceAll(' ', '') }}/index.html"
+eleventyComputed:
+  title: "{{ member.uname }}"
+---
+{% macro urlfriendly(uname) %}{{ uname.toLowerCase() | replace(r/[^A-Za-z0-9]/g, "")  }}{% endmacro %}
+
+<h2>
+  {% if pagination.pageNumber === global.current_president %}
+    <div class="famfamfam-silk bullet_star"></div>
+  {% elif pagination.pageNumber === global.current_vicepresident %}
+    <div class="famfamfam-silk bullet_yellow"></div>
+  {% endif %}
+  {% if member.redacted %}
+    <strong>{{ member.uname }}</strong>
+  {% else %}
+    <a href="https://twocansandstring.com/users/{{ urlfriendly(member.uname) }}">{{ member.uname }}</a>
+  {% endif %}
+</h2>
+<h3>Positions</h3>
+{% if member.positions.length > 0 %}
+  <ul>
+    {% for position in member.positions %}
+      {% set posinfo = positions.roles[position.pos] %}
+      <li>
+        {% if posinfo.icon %}
+          <span class="emoji">{{ posinfo.icon }}</span>
+        {% endif %}
+        <strong>{{ posinfo.title }}</strong>
+        {% if position.period !== -1 %}
+          {{ position.period }}&ndash;{{ position.period + 1 }}
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No governmental positions as of yet.</p>
+{% endif %}
+<h3>Medals</h3>
+{% if member.medals %}
+  <ul>
+    {% for medal in member.medals %}
+      {% set posinfo = positions.medals[medal.pos] %}
+      <li>
+        <span class="emoji">{{ posinfo.icon }}</span>
+        <strong>{{ posinfo.title }}</strong>
+        {{ medal.period }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>{{ member.uname }} does not hold any medals.</p>
+{% endif %}

@@ -1,0 +1,44 @@
+---
+layout: main
+title: Members
+pagination:
+  data: members
+  size: 8
+permalink: "members/{{ pagination.pageNumber + 1 }}/index.html"
+---
+{% macro clas(cond, class, noclass = '') %}
+  {% if cond %}
+    class="{{ class }}"
+  {% else %}
+    {{ noclass }}
+  {% endif %}
+{% endmacro %}
+<p>The following is a list of every member of the Republic and those associated with it, past or present.</p>
+<p>
+  <div class="famfamfam-silk bullet_star"></div> indicates the current President.<br>
+  <div class="famfamfam-silk bullet_yellow"></div> indicates the current Vice President.
+</p>
+<p>Page {{pagination.pageNumber + 1}}/{{ pagination.pages.length }}</p>
+{% set i = pagination.pageNumber * 8 %}
+<ol>
+  {% for member in pagination.items %}
+    <li {{ clas(i === global.current_president or i === global.current_vicepresident, 'emphasis') }}>
+      <a href="/members/{{ member.uname.replaceAll(' ', '') }}">{{ member.uname }}</a>
+      {% if i === global.current_president %}
+        <div class="famfamfam-silk bullet_star"></div>
+      {% elif i === global.current_vicepresident %}
+        <div class="famfamfam-silk bullet_yellow"></div>
+      {% endif %}
+      {% for medal in member.medals %}
+        <span class="emoji">{{ positions.medals[medal.pos].icon }}</span>
+      {% endfor %}
+    </li>
+    {% set i = i + 1 %}
+  {% endfor %}
+</ol>
+{% if pagination.pageNumber > 0 %}
+  <a href="{{ pagination.previous }}">Previous</a>
+{% endif %}
+{% if pagination.pageNumber + 1 < pagination.pages.length %}
+  <a href="{{ pagination.next }}">Next</a>
+{% endif %}

@@ -1,0 +1,195 @@
+{
+  "2021": {
+    "results": {
+      "0": 2,
+      "1": 13,
+      "4": 14,
+      "5": 16
+    },
+    "presidential": {
+      "primary": {
+        "date": "2 March",
+        "results": [
+          {"user": 19},
+          {"user": 12},
+          {"user": 2},
+          {"user": 5}
+        ]
+      },
+      "general": {
+        "date": "4 May",
+        "results": [
+          {"user": 2, "votes": 25},
+          {"user": 5, "votes": 11}
+        ],
+        "winner": 0
+      },
+      "dropouts": [
+        {"user": 19, "date": "14 April"}
+      ]
+    }
+  },
+  "2022": {
+    "results": {
+      "0": 6,
+      "1": 17,
+      "4": 14,
+      "5": 16
+    },
+    "presidential": {
+      "opinion": {
+        "date": "5 March",
+        "results": [
+          {"user": 21, "votes": 2},
+          {"user": 17, "votes": 2},
+          {"user": 22, "votes": 9},
+          {"user": 0, "votes": 6},
+          {"user": 23, "votes": 6},
+          {"user": 24, "votes": 1}
+        ]
+      },
+      "primary": {
+        "date": "4 April",
+        "results": [
+          {"user": 21, "votes": 0},
+          {"user": 17, "votes": 2},
+          {"user": 24, "votes": 2},
+          {"user": 0, "votes": 7},
+          {"user": 23, "votes": 7},
+          {"user": 6, "votes": 8}
+        ]
+      },
+      "general": {
+        "date": "4 May",
+        "results": [
+          {"user": 6, "votes": 33},
+          {"user": 0, "votes": 17},
+          {"user": 23, "votes": 3}
+        ]
+      },
+      "dropouts": [
+        {"user": 22, "date": "22 March"},
+        {"user": 21, "date": "19 April", "reason": "lost primary election"},
+        {"user": 17, "date": "19 April", "reason": "lost primary election"},
+        {"user": 24, "date": "19 April", "reason": "lost primary election"}
+      ]
+    }
+  },
+  "2023": {
+    "results": {
+      "0": 15,
+      "1": 11,
+      "2": 17,
+      "3": 14
+    },
+    "presidential": {
+      "opinion": [
+        {
+          "date": "10 February",
+          "results": [
+            {"user": 5, "votes": 8},
+            {"user": 15, "votes": 5},
+            {"user": 25, "votes": 9},
+            {"user": 23, "votes": 3},
+            {"user": 0, "votes": 7}
+          ]
+        },
+        {
+          "date": "14 March",
+          "results": [
+            {"user": 5, "votes": 7},
+            {"user": 15, "votes": 10},
+            {"user": 25, "votes": 5},
+            {"user": 23, "votes": 4},
+            {"user": 0, "votes": 2}
+          ]
+        },
+        {
+          "date": "21 March",
+          "results": [
+            {"user": 5, "votes": 2},
+            {"user": 15, "votes": 4},
+            {"user": 25, "votes": 3},
+            {"user": 23, "votes": 0},
+            {"user": 0, "votes": 1},
+            {"user": 26, "votes": 4}
+          ]
+        }
+      ],
+      "primary": {
+        "date": "1 April",
+        "results": [
+          {"user": 5, "votes": 4},
+          {"user": 15, "votes": 9},
+          {"user": 19, "votes": 8},
+          {"user": 23, "votes": 1},
+          {"user": 0, "votes": 2},
+          {"user": 26, "votes": 4},
+          {"user": 22, "votes": 2}
+        ]
+      },
+      "general": {
+        "date": "6 May",
+        "results": [
+          {"user": 15, "votes": 28},
+          {"user": 19, "votes": 15}
+        ]
+      },
+      "dropouts": [
+        {"user": 25, "date": "31 March"},
+        {"user": 5, "date": "4 April", "reason": "lost primary election"},
+        {"user": 23, "date": "4 April", "reason": "lost primary election"},
+        {"user": 0, "date": "4 April", "reason": "lost primary election"},
+        {"user": 26, "date": "4 April", "reason": "lost primary election"},
+        {"user": 22, "date": "4 April", "reason": "lost primary election"}
+      ]
+    },
+    "custodian": {
+      "opinion": [
+        {
+          "date": "10 February",
+          "results": [
+            {"user": 14, "votes": 10},
+            {"user": 17, "votes": 7},
+            {"user": 16, "votes": 10}
+          ]
+        },
+        {
+          "date": "14 March",
+          "results": [
+            {"user": 14, "votes": 11},
+            {"user": 17, "votes": 11},
+            {"user": 16, "votes": 6}
+          ]
+        },
+        {
+          "date": "21 March",
+          "results": [
+            {"user": 14, "votes": 4},
+            {"user": 17, "votes": 4},
+            {"user": 16, "votes": 6}
+          ]
+        }
+      ],
+      "primary": {
+        "date": "1 April",
+        "results": [
+          {"user": 14, "votes": 2},
+          {"user": 17, "votes": 3},
+          {"user": 16, "votes": 5}
+        ]
+      },
+      "general": {
+        "date": "6 May",
+        "results": [
+          {"user": 17, "votes": 23},
+          {"user": 16, "votes": 20}
+        ],
+        "notes": "A large portion of the votes were part of the 2023 Coup. These votes were all invalidated."
+      },
+      "dropouts": [
+        {"user": 14, "date": "4 April", "reason": "lost primary election"}
+      ]
+    }
+  }
+}

@@ -1,0 +1,115 @@
+{
+  "roles": [
+    {
+      "title": "President of the Republic"
+    },
+    {
+      "title": "Vice President of the Republic",
+      "chosen_by": 0
+    },
+    {
+      "title": "Custodian of the Republic"
+    },
+    {
+      "title": "Junior Custodian",
+      "chosen_by": 2
+    },
+    {
+      "title": "Lesser Janitor, Custodian"
+    },
+    {
+      "title": "Top Janitorial Provider",
+      "chosen_by": 4
+    },
+    {
+      "title": "Government Keeper",
+      "icon": "✔️"
+    },
+    {
+      "title": "Head of the Court of Can",
+      "icon": "🏛️"
+    },
+    {
+      "title": "Courtroom Judge",
+      "icon": "👨‍⚖️"
+    },
+    {
+      "title": "Head of TPOL",
+      "icon": "🤕"
+    },
+    {
+      "title": "Head Priest of Fish Cult",
+      "icon": "🐟"
+    },
+    {
+      "title": "Head of the Chapel of Chad",
+      "icon": "😎"
+    },
+    {
+      "title": "Head of Art Market and Theatrical Plays",
+      "icon": "🎭"
+    },
+    {
+      "title": "Keeper of Meme Knowledge",
+      "icon": "📚"
+    },
+    {
+      "title": "Head of the Department of Redundancy",
+      "icon": "🥴"
+    },
+    {
+      "title": "Head of the Department of Motor Vehicles",
+      "icon": "🚗"
+    },
+    {
+      "title": "Head of Border Patrol",
+      "icon": "🚧"
+    },
+    {
+      "title": "Head of TwoCans FBI",
+      "icon": "👮"
+    },
+    {
+      "title": "Head of General Transportation",
+      "icon": "🚌"
+    },
+    {
+      "title": "Official Vexillologist",
+      "icon": "🏳️"
+    },
+    {
+      "title": "International Affairs Manager",
+      "icon": "📜"
+    },
+    {
+      "title": "Extended Car Warranty Dealer",
+      "icon": "🚘"
+    },
+    {
+      "title": "Local Bat",
+      "icon": "🦇"
+    },
+    {
+      "title": "Pun Dealer",
+      "icon": "😂"
+    },
+    {
+      "title": "God",
+      "icon": "😇"
+    }
+  ],
+  "medals": [
+    {
+      "title": "Medal of the Republic",
+      "icon": "🥇"
+    },
+    {
+      "title": "Medal of the String",
+      "icon": "🎖"
+    },
+    {
+      "title": "Medal of the Cans",
+      "icon": "🏅"
+    }
+  ]
+}

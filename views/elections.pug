@@ -1,0 +1,66 @@
+---
+layout: main
+title: Elections
+---
+mixin results(data)
+  ul
+    - for (result of data)
+      - const usr = members[result.user]
+      li
+        div.barcount(data-count=result.votes,style=`width:${result.votes * 10}px;`)
+        a(href=`/members/${usr.uname}`)= usr.uname
+
+mixin election_group(election)
+  - if (election.opinion)
+    h3.nm Opinion Poll
+    - if (election.opinion[0] === undefined)
+      p.nm= election.opinion.date
+      +results(election.opinion.results)
+    - else
+      - for (poll in election.opinion)
+        p.nm &numero;#{parseInt(poll) + 1} (#{election.opinion[poll].date})
+        +results(election.opinion[poll].results)
+
+  h3.nm Primary Election
+  p.nm= election.primary.date
+  +results(election.primary.results)
+
+  h3.nm General Election
+  p.nm= election.general.date
+  +results(election.general.results)
+  - if (election.general.notes)
+    p= election.general.notes
+  
+  - if (election.dropouts)
+    h3.nm Dropouts
+    ul
+      - for (dropout of election.dropouts)
+        - const usr = members[dropout.user]
+        li
+          a(href=`/members/${usr.uname}`)= usr.uname
+          | #{dropout.date}
+          - if (dropout.reason)
+            |  (#{dropout.reason})
+
+- let i = 0, el = Object.entries(elections);
+- for ([year, election] of el)
+  h1= year
+  ul
+    - for ([pos, uid] of Object.entries(election.results))
+      - const usr = members[uid]
+      li
+        a(href=`/members/${usr.uname}`)= usr.uname
+        |  #{positions.roles[pos].title}
+        - if (positions.roles[pos].chosen_by !== undefined)
+          |  (selected by #{members[ election.results[ positions.roles[pos].chosen_by ] ].uname})
+  - if (election.presidential)
+    h2 Presidential
+    +election_group(election.presidential)
+  - if (election.custodian)
+    h2 Custodian
+    +election_group(election.custodian)
+
+  - if (i !== el.length - 1)
+    hr
+  - i++
+
