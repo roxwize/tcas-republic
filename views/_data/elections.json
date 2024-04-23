@@ -10,10 +10,10 @@
       "primary": {
         "date": "2 March",
         "results": [
-          {"user": 19},
-          {"user": 12},
-          {"user": 2},
-          {"user": 5}
+          {"user": 19, "percent": 38.46},
+          {"user": 12, "percent": 9.23},
+          {"user": 2, "percent": 24.62},
+          {"user": 5, "percent": 27.69}
         ]
       },
       "general": {
@@ -189,6 +189,75 @@
       },
       "dropouts": [
         {"user": 14, "date": "4 April", "reason": "lost primary election"}
+      ]
+    }
+  },
+  "2024": {
+    "results": {},
+    "presidential": {
+      "opinion": [
+        {
+          "date": "23 February",
+          "results": [
+            {"user": 27, "votes": 5},
+            {"user": 28, "votes": 6},
+            {"user": 29, "votes": 6},
+            {"user": 30, "votes": 5}
+          ]
+        },
+        {
+          "date": "13 March",
+          "results": [
+            {"user": 27, "votes": 4},
+            {"user": 28, "votes": 7},
+            {"user": 29, "votes": 4},
+            {"user": 30, "votes": 2},
+            {"user": 6, "votes": 6},
+            {"user": 4, "votes": 0},
+            {"user": 0, "votes": 3}
+          ]
+        }
+      ],
+      "primary": {
+        "date": "1 April",
+        "results": [
+          {"user": 27, "votes": 2},
+          {"user": 28, "votes": 8},
+          {"user": 29, "votes": 9},
+          {"user": 30, "votes": 1},
+          {"user": 6, "votes": 11},
+          {"user": 4, "votes": 0},
+          {"user": 0, "votes": 3}
+        ]
+      }
+    },
+    "custodian": {
+      "opinion": [
+        {
+          "date": "2 March",
+          "results": [
+            {"user": 17, "votes": 12},
+            {"user": 31, "votes": 14}
+          ]
+        },
+        {
+          "date": "18 March",
+          "results": [
+            {"user": 17, "votes": 16},
+            {"user": 31, "votes": 15}
+          ]
+        },
+        {
+          "date": "22 March",
+          "results": [
+            {"user": 17, "votes": 13},
+            {"user": 26, "votes": 10}
+          ]
+        }
+      ],
+      "primary": "None, as there are only two candidates.",
+      "dropouts": [
+        {"user": 31, "date": "21 March"}
       ]
     }
   }

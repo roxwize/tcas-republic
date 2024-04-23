@@ -7,7 +7,7 @@ mixin results(data)
     - for (result of data)
       - const usr = members[result.user]
       li
-        div.barcount(data-count=result.votes,style=`width:${result.votes * 10}px;`)
+        div.barcount(data-count=result.votes !== undefined ? result.votes : `${result.percent}%`,style=`width:${(result.votes !== undefined ? result.votes : Math.floor(result.percent)) * 10}px;`)
         a(href=`/members/${usr.uname}`)= usr.uname
 
 mixin election_group(election)
@@ -22,14 +22,20 @@ mixin election_group(election)
         +results(election.opinion[poll].results)
 
   h3.nm Primary Election
-  p.nm= election.primary.date
-  +results(election.primary.results)
+  - if (typeof election.primary === "object")
+    p.nm= election.primary.date
+    +results(election.primary.results)
+  - else
+    p= election.primary
 
   h3.nm General Election
-  p.nm= election.general.date
-  +results(election.general.results)
-  - if (election.general.notes)
-    p= election.general.notes
+  - if (election.general)
+    p.nm= election.general.date
+    +results(election.general.results)
+    - if (election.general.notes)
+      p= election.general.notes
+  - else
+    p The general election is set to take place on the 4th of May.
   
   - if (election.dropouts)
     h3.nm Dropouts
