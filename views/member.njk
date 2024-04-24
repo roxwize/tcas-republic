@@ -11,16 +11,7 @@ eleventyComputed:
 {% macro urlfriendly(uname) %}{{ uname.toLowerCase() | replace(r/[^A-Za-z0-9]/g, "")  }}{% endmacro %}
 
 <h2>
-  {% if pagination.pageNumber === global.current_president %}
-    <div class="famfamfam-silk bullet_star"></div>
-  {% elif pagination.pageNumber === global.current_vicepresident %}
-    <div class="famfamfam-silk bullet_yellow"></div>
-  {% endif %}
-  {% if member.redacted %}
-    <strong>{{ member.uname }}</strong>
-  {% else %}
-    <a href="https://twocansandstring.com/users/{{ urlfriendly(member.uname) }}">{{ member.uname }}</a>
-  {% endif %}
+  {{ member | member_full | safe }}
 </h2>
 <h3>Positions</h3>
 {% if member.positions.length > 0 %}

@@ -1,7 +1,14 @@
 ---
 layout: main
 title: Elections
+pagination:
+  data: elections
+  size: 1
+  alias: e
+permalink: '| #{`/elections/${e}/index.html`}'
 ---
+- const election = elections[e];
+
 mixin results(data)
   ul
     - for (result of data)
@@ -48,25 +55,33 @@ mixin election_group(election)
           - if (dropout.reason)
             |  (#{dropout.reason})
 
-- let i = 0, el = Object.entries(elections);
-- for ([year, election] of el)
-  h1= year
-  ul
-    - for ([pos, uid] of Object.entries(election.results))
-      - const usr = members[uid]
-      li
-        a(href=`/members/${usr.uname}`)= usr.uname
-        |  #{positions.roles[pos].title}
-        - if (positions.roles[pos].chosen_by !== undefined)
-          |  (selected by #{members[ election.results[ positions.roles[pos].chosen_by ] ].uname})
-  - if (election.presidential)
-    h2 Presidential
-    +election_group(election.presidential)
-  - if (election.custodian)
-    h2 Custodian
-    +election_group(election.custodian)
+p
+  - if (pagination.href.previous)
+    a(href=pagination.href.previous) < #{pagination.href.previous.substring(11, 15)}
+  - if (pagination.href.previous && pagination.href.next)
+    |  | 
+  - if (pagination.href.next)
+    a(href=pagination.href.next) #{pagination.href.next.substring(11, 15)} >
 
-  - if (i !== el.length - 1)
-    hr
-  - i++
+h1= e
+ul
+  - const cache = [] // Just so that we don't have to re-compute everything when looking up roles
+  - for (index of [0, 1, 2, 3, 4, 5]) // Might need to update this so that it can include more than just the annual roles (like what medals the pres. gave out that year)
+    - let p = filters.get_role(index, parseInt(e));
+    - cache[index] = p;
+    - if (!p) continue;
+    - let position = positions.roles[index];
+    li
+      | !{filters.member(p)} #{position.title}
+      - if (position.chosen_by !== undefined)
+        - let _c; // Don't waste compute on already looked-up roles
+        - if (cache[position.chosen_by]) _c = cache[position.chosen_by]
+        - else _c = filters.get_role(position.chosen_by, parseInt(e));
+        span  (selected by !{filters.member(_c)})
+- if (election.presidential)
+  h2 Presidential
+  +election_group(election.presidential)
+- if (election.custodian)
+  h2 Custodian
+  +election_group(election.custodian)
 
