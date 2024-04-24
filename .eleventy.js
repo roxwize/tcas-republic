@@ -15,8 +15,8 @@ const url_friendly = (uname) => uname.toLowerCase().replace(/[^A-Za-z0-9]/g, '')
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("static/*/*");
   eleventyConfig.addPassthroughCopy({
-    "ext/silk/dist/sprite/famfamfam-silk.min.css": "static/css/silk.css",
-    "ext/silk/dist/sprite/famfamfam-silk.png": "static/css/famfamfam-silk.png"
+    "famfamfam-silk/dist/sprite/famfamfam-silk.min.css": "static/css/silk.css",
+    "famfamfam-silk/dist/sprite/famfamfam-silk.png":     "static/css/famfamfam-silk.png"
   });
 
   eleventyConfig.addFilter("jmespath", (data, query) => {
