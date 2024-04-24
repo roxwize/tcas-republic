@@ -1,4 +1,5 @@
-- [ ] use jmespath to find who is the president
+- [x] use jmespath to find who is the president
 - [ ] use jmespath to find who gave a medal to a user
-- [ ] make the election results based on user data rather than being hard coded
-- [ ] add user aliases? like Cornbread Wielder for bronco and horse for yelr
+- [x] make the election results based on user data rather than being hard coded
+- [x] add user aliases? like Cornbread Wielder for bronco and horse for yelr
+- [ ] actually make user sockpuppetry visible on user pages (maybe merge together)
