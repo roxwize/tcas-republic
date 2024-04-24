@@ -23,15 +23,7 @@ permalink: "members/{{ pagination.pageNumber + 1 }}/index.html"
 <ol>
   {% for member in pagination.items %}
     <li {{ clas(i === global.current_president or i === global.current_vicepresident, 'emphasis') }}>
-      <a href="/members/{{ member.uname.replaceAll(' ', '') }}">{{ member.uname }}</a>
-      {% if i === global.current_president %}
-        <div class="famfamfam-silk bullet_star"></div>
-      {% elif i === global.current_vicepresident %}
-        <div class="famfamfam-silk bullet_yellow"></div>
-      {% endif %}
-      {% for medal in member.medals %}
-        <span class="emoji">{{ positions.medals[medal.pos].icon }}</span>
-      {% endfor %}
+      {{ member | member_full(false) | safe }}
     </li>
     {% set i = i + 1 %}
   {% endfor %}
