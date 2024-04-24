@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Varela+Round&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
 :root {
   font-family: "Varela Round", sans-serif;
   box-sizing: border-box;
@@ -30,7 +30,8 @@ header > h1 {
   font-size: 24px;
 }
 
-ul, ol {
+ul,
+ol {
   padding-inline-start: 0;
 }
 li {
@@ -40,7 +41,7 @@ li {
 }
 a {
   text-decoration: none;
-  color: #08f
+  color: #08f;
 }
 a:hover {
   text-decoration: underline;
@@ -52,7 +53,7 @@ a:hover {
   font-weight: bold;
 }
 .nm {
-  margin: 0!important;
+  margin: 0 !important;
 }
 .emoji {
   font-family: "Noto Color Emoji", "Twitter Color Emoji", sans-serif;

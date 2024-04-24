@@ -3,3 +3,4 @@
 - [x] make the election results based on user data rather than being hard coded
 - [x] add user aliases? like Cornbread Wielder for bronco and horse for yelr
 - [ ] actually make user sockpuppetry visible on user pages (maybe merge together)
+- [ ] sort members alphabetically
